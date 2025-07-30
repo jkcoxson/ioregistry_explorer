@@ -1,0 +1,21 @@
+[package]
+name = "ioreg_explorer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.47", features = ["full"] }
+idevice = { version = "0.1.37", features = [
+  "usbmuxd",
+  "tcp",
+  "diagnostics_relay",
+] }
+egui = { version = "0.32" }
+egui_logger = { version = "0.8" }
+eframe = { version = "0.32" }
+rfd = { version = "0.15", features = ["gtk3"], default-features = false }
+plist = { version = "1.7" }
+log = { version = "0.4" }
+uuid = { version = "1.16", features = ["v4"] }
+mdns = { version = "3" }
+futures-util = { version = "0.3" }
