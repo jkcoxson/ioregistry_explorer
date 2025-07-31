@@ -23,16 +23,6 @@ fn main() {
     let (idevice_sender, mut idevice_receiver) = unbounded_channel();
     idevice_sender.send(IdeviceCommands::GetDevices).unwrap();
 
-    let mut supported_apps = HashMap::new();
-    supported_apps.insert(
-        "SideStore".to_string(),
-        "ALTPairingFile.mobiledevicepairing".to_string(),
-    );
-    supported_apps.insert("Feather".to_string(), "pairingFile.plist".to_string());
-    supported_apps.insert("StikDebug".to_string(), "pairingFile.plist".to_string());
-    supported_apps.insert("Protokolle".to_string(), "pairingFile.plist".to_string());
-    supported_apps.insert("Antrag".to_string(), "pairingFile.plist".to_string());
-
     let app = MyApp {
         devices: None,
         devices_placeholder: "Loading...".to_string(),
